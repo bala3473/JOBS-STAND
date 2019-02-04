@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="jobs")
 public class Job {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int jobId;
@@ -28,6 +29,7 @@ public class Job {
 	private String qualification;
 
 	public int getJobId() {
+		System.err.println("class is");
 		return jobId;
 	}
 
