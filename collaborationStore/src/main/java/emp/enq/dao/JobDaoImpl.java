@@ -34,6 +34,11 @@ public class JobDaoImpl implements JobDao {
 			System.out.println("job details"+job);
 			return job;
 		}
+		public void update(Job job) {
+			Session session=sessionFactory.getCurrentSession();
+			session.update(job);
+			
+		}
 
 	}
 
