@@ -55,14 +55,14 @@ import org.springframework.web.bind.annotation.RestController;
 		return new ResponseEntity<List<Job>>(jobs,HttpStatus.OK);
 		
 	}
-	@RequestMapping( value="/getJob", method=RequestMethod.GET)
+	@RequestMapping(value="/getJob", method=RequestMethod.GET)
 	public ResponseEntity<?> getJob(@RequestParam int jobId)
 	{
 		Job job=jobDao.getJob(jobId);
 		if(job==null)
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		else
-			return new ResponseEntity<Job>(HttpStatus.OK);
+			return new ResponseEntity<Job>(job ,HttpStatus.OK);
 	}
 	{
 	

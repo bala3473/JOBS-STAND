@@ -1,6 +1,5 @@
 package emp.enq.dao;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -26,11 +25,13 @@ public class JobDaoImpl implements JobDao {
 			Session session=sessionFactory.getCurrentSession();
 			Query quary=session.createQuery("from Job");
 			List<Job> jobs=quary.list();
+			System.out.println("get all-jobs"+jobs);
 			return jobs;
 		}
 		public Job getJob(int jobId) {
 			Session session=sessionFactory.getCurrentSession();
 			Job job=(Job)session.get(Job.class,jobId);
+			System.out.println("job details"+job);
 			return job;
 		}
 
