@@ -8,7 +8,7 @@ public interface JobDao {
 	
 	public	void addJob(Job job);
 	public List<Job> getAlljobs(Job job);
-	public Job getJob(Job job);
+	public Job getJob(int jobId);
 	
 	
 		

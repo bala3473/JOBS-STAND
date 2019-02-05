@@ -1,5 +1,6 @@
 package emp.enq.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -15,21 +16,22 @@ import emp.enq.models.Job;
 public class JobDaoImpl implements JobDao {
 	@Autowired
 	private SessionFactory sessionFactory;
+	
 		public void addJob(Job job) {
 		Session session=sessionFactory.getCurrentSession();
 		session.save(job);	
 		}
-		public java.util.List<Job> getAlljobs(Job job) 
+		public List<Job> getAlljobs(Job job) 
 		{
 			Session session=sessionFactory.getCurrentSession();
 			Query quary=session.createQuery("from Job");
 			List<Job> jobs=quary.list();
-			
-			return null;
+			return jobs;
 		}
-		public Job getJob(Job job) {
-			// TODO Auto-generated method stub
-			return null;
+		public Job getJob(int jobId) {
+			Session session=sessionFactory.getCurrentSession();
+			Job job=(Job)session.get(Job.class,jobId);
+			return job;
 		}
 
 	}

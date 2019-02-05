@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.web.bind.annotation.RequestBody;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestMethod;
-	import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 	import emp.enq.dao.JobDao;
 	import emp.enq.models.ErrorClazz;
@@ -19,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 		@Autowired
 		private JobDao jobDao;
-		private Job job;
+		public Job job;
 		//T is Type of data that will be added in the body of HttpResponse
 		//if Job details gets inserted successfully  - T is Job object
 		//if there is an exception while inserting job details  - T is ErrorClazz object
@@ -53,11 +54,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 		else
 		return new ResponseEntity<List<Job>>(jobs,HttpStatus.OK);
 		
-		
 	}
+	@RequestMapping( value="/getJob", method=RequestMethod.GET)
+	public ResponseEntity<?> getJob(@RequestParam int jobId)
+	{
+		Job job=jobDao.getJob(jobId);
+		if(job==null)
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		else
+			return new ResponseEntity<Job>(HttpStatus.OK);
+	}
+	{
 	
 	
 
+	}
 	}
 	
 
