@@ -1,5 +1,8 @@
 package emp.enq.dao;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,18 @@ public class JobDaoImpl implements JobDao {
 		public void addJob(Job job) {
 		Session session=sessionFactory.getCurrentSession();
 		session.save(job);	
+		}
+		public java.util.List<Job> getAlljobs(Job job) 
+		{
+			Session session=sessionFactory.getCurrentSession();
+			Query quary=session.createQuery("from Job");
+			List<Job> jobs=quary.list();
+			
+			return null;
+		}
+		public Job getJob(Job job) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 	}

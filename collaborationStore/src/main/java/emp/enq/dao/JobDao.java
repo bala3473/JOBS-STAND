@@ -1,10 +1,17 @@
 package emp.enq.dao;
 
+import java.util.List;
+
 import emp.enq.models.Job;
 
 public interface JobDao {
 	
-		void addJob(Job job);
+	public	void addJob(Job job);
+	public List<Job> getAlljobs(Job job);
+	public Job getJob(Job job);
+	
+	
+		
 		}
 
 
