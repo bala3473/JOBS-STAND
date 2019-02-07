@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import emp.enq.models.Job;
+
 @Repository
 @Transactional
 public class JobDaoImpl implements JobDao {
@@ -37,6 +38,12 @@ public class JobDaoImpl implements JobDao {
 		public void update(Job job) {
 			Session session=sessionFactory.getCurrentSession();
 			session.update(job);
+			
+		}
+		public void delete(int jobId) {
+			Session session=sessionFactory.getCurrentSession();
+			Job job=(Job)session.get(Job.class,jobId);
+			session.delete(jobId);
 			
 		}
 

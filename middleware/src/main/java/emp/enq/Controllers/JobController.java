@@ -21,7 +21,6 @@ public class JobController {
 
 	@Autowired
 	private JobDao jobDao;
-	public Job job;
 
 	// T is Type of data that will be added in the body of HttpResponse
 	// if Job details gets inserted successfully - T is Job object
@@ -48,7 +47,7 @@ public class JobController {
 	}
 
 	@RequestMapping(value = "/getAlljobs", method = RequestMethod.GET)
-	public ResponseEntity<?> getAlljobs() {
+	public ResponseEntity<?> getAlljobs(Job job) {
 		List<Job> jobs = jobDao.getAlljobs(job);
 		if (jobs.isEmpty())
 			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
@@ -67,7 +66,7 @@ public class JobController {
 	}
 
 	@RequestMapping(value = "/updatejob", method = RequestMethod.PUT)
-	public ResponseEntity<?> updatejob() {
+	public ResponseEntity<?> updatejob(Job job) {
 		try {
 			jobDao.update(job);
 		} catch (Exception e) {
@@ -77,9 +76,17 @@ public class JobController {
 		return new ResponseEntity<Job>(job, HttpStatus.OK);
 
 	}
-	
 
-	{
-
+	@RequestMapping(value ="/delete", method=RequestMethod.DELETE)
+	public ResponseEntity<?> delete(@RequestParam int jobId) {
+		try {
+			jobDao.delete(jobId);
+			System.out.println("jobDao"+jobDao);
+		}
+		catch (Exception e) {
+			ErrorClazz clazz = new ErrorClazz(4, "given id no there" + e.getMessage());
+			return new ResponseEntity<ErrorClazz>(clazz, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 }

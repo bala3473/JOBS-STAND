@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>emp.enq</groupId>
-	<artifactId>middleware</artifactId>
+	<artifactId>collaborationmiddle</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>middleware Maven Webapp</name>
+	<name>collaborationmiddle Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -25,6 +25,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>middleware</finalName>
+		<finalName>collaborationmiddle</finalName>
 	</build>
 </project>
