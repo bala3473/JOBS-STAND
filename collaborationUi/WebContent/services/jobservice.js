@@ -8,7 +8,7 @@ app.factory('JobService',function($http){
 	//addJob in service   <- addJob in controller   <-  jobform.html
 	jobService.addJob=function(job){//get job object from JobCtrl ,JObCtrl will get it from view
 		//$http.post(url,data)
-		var url="http://localhost:8081/coolaborationMiddle/addjob"
+		var url="http://localhost:8081/collaborationMiddle/addjob"
 		//call restful service
 		return $http.post(url,job)//job in JSON format, will get added in the body of Http request
 	}

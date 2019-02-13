@@ -5,7 +5,7 @@ var app = angular.module("app", [ 'ngRoute' ])
 app.config(function($routeProvider) {
 	$routeProvider
 
-	.when('/addjob', {controller : 'JobCtrl',templateUrl : 'views/jobform.html'})
+	.when('#/addjob', {controller : 'JobCtrl',templateUrl : 'views/jobform.html'})
 
 	// this view can access all $scope variables all $scope functions defined in
 	// JobCtrl
