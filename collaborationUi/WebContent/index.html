@@ -4,7 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body ng-app="app"><!-- bootstrap an angular module 'app' -->
+<body data-ng-app="app"><!-- bootstrap an angular module 'app' -->
 <div class="container">
 <nav class="navbar navbar-inverse" >
 <div  class="navbar-header">
@@ -30,7 +30,7 @@
 </div>
 <div class="container">
 <!-- content of partial views will get added here -->
-<div ng-view></div>
+<div data-ng-view></div>
 </div>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,6 +43,5 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="services/jobservice.js"></script>
-
 </html>
 
