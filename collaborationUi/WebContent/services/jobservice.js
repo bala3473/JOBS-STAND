@@ -12,10 +12,11 @@ app.factory('JobService',function($http){
 		//call restful service
 		return $http.post(url,job)//job in JSON format, will get added in the body of Http request
 	}
-	
-	jobService
+	jobService.getAllJobs=function(){
+		var url="http://localhost:8081/collaborationMiddle/getAlljobs"
+			return $http.get(url)
+	}
 	
 	return jobService;
-	
 	
 })

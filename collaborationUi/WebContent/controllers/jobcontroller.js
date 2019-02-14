@@ -17,9 +17,20 @@ app.controller('JobCtrl',function($scope,JobService,$location){//JobService is a
 			$scope.error=response.data// ErrorClazz object in JSON representation 
 			//{'errorCode':1,'errorMessage':'Job details not inserted..something went wrong..'}
 		})
-		
-		
 	
 	}
-})
+	JobService.getAllJobs().then(
+		function(response){
+			$scope.jobs=response.data
+			console.log(response.status)
+		},function(response){
+			console.log(response.status)
+		})
+		
+}	
+)
+	
+		
+	
+
 

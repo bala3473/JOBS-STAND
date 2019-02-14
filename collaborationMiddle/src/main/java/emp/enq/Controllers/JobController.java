@@ -27,8 +27,8 @@ public class JobController {
 	// if there is an exception while inserting job details - T is ErrorClazz object
 	// client has to add the data in the body of the Http Request
 	// handler method has to read the data from the body of the request
-	@RequestMapping(value = "/addjob", method = RequestMethod.POST)
-	public ResponseEntity<?> addjob(@RequestBody Job job) {
+	@RequestMapping(value="/addjob", method= RequestMethod.POST)
+	public ResponseEntity<?> addJob(@RequestBody Job job) {
 		try {
 			job.setPostedOn(new Date());
 			jobDao.addJob(job);
@@ -37,7 +37,6 @@ public class JobController {
 			return new ResponseEntity<ErrorClazz>(errorClazz, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<Job>(job, HttpStatus.OK);
-
 		// success - Job,200 OK
 		// exception - ErrorClazz,500 ISE
 		// So we need 2 ResponseEntity Objects
@@ -45,9 +44,8 @@ public class JobController {
 		// function for success - response.data is Job , response.status - 200 OK
 		// function for error - response.data is ErrorClazz , response.status - 500
 	}
-
 	@RequestMapping(value = "/getAlljobs", method = RequestMethod.GET)
-	public ResponseEntity<?> getAlljobs(Job job) {
+	public ResponseEntity<?> getAllJobs(Job job) {
 		List<Job> jobs = jobDao.getAlljobs(job);
 		if (jobs.isEmpty())
 			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
