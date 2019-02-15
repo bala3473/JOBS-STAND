@@ -1,5 +1,6 @@
 package emp.enq.dao;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,13 +32,16 @@ public class UserDaoImpl implements UserDao  {
 	}
 
 	public boolean isPhonenumberUnique(String phonenumber) {
-		
+
+		//phonenumber property is not an Identifier, not annoated phonenumbe with @Id
 		Session session=sessionFactory.getCurrentSession();
-		User user=(User)session.get(User.class, phonenumber);
+		Query query=session.createQuery("from User where phonenumber=:pnumber");
+		query.setString("pnumber", phonenumber);
+		User user=(User)query.uniqueResult();
 		if(user==null)
-			return true;
+			return true;//phonenumber is unique
 		else
-		return false;
+		return false;//phone numbe is duplicate
 	}
 
 }
