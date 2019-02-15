@@ -6,5 +6,5 @@ public interface UserDao {
 	
 	void userRegistrtion(User user);
 	boolean isEmailUnique(String email);
-   boolean isPhonenumberUnique(String phonenumber);
+   boolean isPhonenumberUnique(String phonenumber)
 }
