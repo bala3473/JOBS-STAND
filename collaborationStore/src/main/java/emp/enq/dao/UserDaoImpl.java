@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao  {
 		if(user==null)
 			return true;//phonenumber is unique
 		else
-		return false;//phone numbe is duplicate
+		return false//phone numbe is duplicate
 	}
 
 }
