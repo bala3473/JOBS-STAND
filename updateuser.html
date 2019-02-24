@@ -1,0 +1,22 @@
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+ <div class="edituser">
+<b>edit user details</b> 
+<form>
+<pre>
+Enter email:<input type="email" ng-model="user.email" disabled>
+Enter possword:<input type="password" ng-model="user.possword">
+Enter firstname:<input type="text" ng-model="user.firstname">
+Enter lastname:<input type="text" ng-model="user.lastname">
+Enter phonenumber:<input type="text" ng-model="user.phonenumber">
+Select Role :<select ng-model="user.role">
+<option value="STUDENT">student
+<option value="USER">user
+<option value="EMPOLY">empoly
+</select>
+<button ng-click="updateUser(user)" class="btn btn-primary">Edit</button>
+</pre>
+</form>
+</div>
+
+
+		 

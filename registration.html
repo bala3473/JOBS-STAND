@@ -1,0 +1,18 @@
+<b>userRegistration</b>
+<!-- <span style="colour:red">{{error.errorMessage}}</span>-->
+<form>
+<pre>
+Enter email:<input type="email" ng-model="user.email">
+Enter password:<input type="possword" ng-model="user.possword">
+Enter firstname:<input type="text" ng-model="user.firstname">
+Enter lastname:<input type="lastname" ng-model="user.lastname">
+Enter phonenumber:<input type="text" ng-model="user.phonenumber">
+Select Role<select ng-model="user.role">
+<option value="STUDENT">Student
+<option value="USER">User
+<option value="EMPOLY">Empoly
+<option value="CUSTMORE">Custmore
+</select>
+<button ng-click="userRegistration(user)" class="btn btn-primary">Register</button>
+</pre>
+</form>
