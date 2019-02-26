@@ -1,0 +1,26 @@
+.myform{
+
+	text-align:center;
+	font: italic;
+	text-transform:uppercase;
+	background-color:red;
+	background: green;
+	border-top-right-radius: 22ex;
+	border-radius: 22ex;
+	border-top-color: blue;
+	background-size: 32%;
+ }
+form{
+	align-content: center;
+}
+.mylog
+{
+	margin: 30%;
+	padding: 33%;
+	border-style: dotted;
+	border-bottom-left-radius: 22em;
+	border-top-left-radius: 77em;
+	list-style: inside;
+	font-style: italic;
+	text-align: center;
+}
