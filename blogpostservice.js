@@ -18,7 +18,17 @@ app.factory('BlogPostService',function($http){
 		blogPostService.getBlogsWaitingForApproval=function(){
 			return $http.get(BASE_URL + "/blogswaitingforapproval")
 		}
-		
+		blogPostService.getBlog=function(blogPostId){
+			return $http.get(BASE_URL +"/getblog",blogPostId)
+		}
+		blogPostService.approveBlogPost=function(blogpost){
+			return $http.put(BASE_URL +"/approveblogpost",blogPost)
+			
+		}
+		blogPostService.rejectBlogPost=function(blogpost){
+			return $http.put(BASE_URL +"/rejectblogpost",blogPost)
+			
+		}
 		
 		return blogPostService;
 	})
