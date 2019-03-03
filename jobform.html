@@ -10,15 +10,15 @@
 <!-- job is a model name, this model can be accessed in the controller by using $scope
 $scope.job -> {'jobTitle':'','skillsRequired':'',.........}
  -->
-Enter JobTitle        :<input type="text"  ng-model="job.jobTitle">
-Enter Description     :<textarea ng-model="job.jobDescription"></textarea>
-Enter Salary          :<input type="text" ng-model="job.salary">
-Enter Skills required :<input type="text"  ng-model="job.skillsRequired">
-Enter Location        :<input type="text" ng-model="job.location">
-Enter YrsOfExp        :<input type="text" ng-model="job.yrsOfExp">
-Enter Reference       :<input type="text" ng-model="job.reference">
-Enter qualification   :<input type="text" ng-model="job.qualification">
-<button ng-click="addJob()">Add Job</button>
+Enter JobTitle        :<input type="text"  data-ng-model="job.jobTitle">
+Enter Description     :<textarea data-ng-model="job.jobDescription"></textarea>
+Enter Salary          :<input type="text" data-ng-model="job.salary">
+Enter Skills required :<input type="text"  data-ng-model="job.skillsRequired">
+Enter Location        :<input type="text" data-ng-model="job.location">
+Enter YrsOfExp        :<input type="text" data-ng-model="job.yrsOfExp">
+Enter Reference       :<input type="text" data-ng-model="job.reference">
+Enter qualification   :<input type="text" data-ng-model="job.qualification">
+<button data-ng-click="addJob()">Add Job</button>
 </pre>
 </form>
 

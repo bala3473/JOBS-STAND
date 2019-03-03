@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<div data-ng-show ="user==undefined">please login add to blog</div>
+<div data-ng-show="user!=undefined">
+<span style="color:red">{{error.errorMessage}}</span>
+<form>
+<pre>
+Enter Blog Title:<input type="text" data-ng-model="blogpost.blogTitle">
+Enter Blog Content:<textarea rows="5" cols="50" data-ng-model="blogpost.blogContent"></textarea>
+<button data-ng-click="addBlogPost(blogpost)" class="btn btn-info">post blog</button>
+</pre>
+</form>
+</div>
